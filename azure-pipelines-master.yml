@@ -1,0 +1,35 @@
+trigger:
+  - master
+pool:
+  vmImage: "windows-latest"
+
+variables:
+  BuildConfiguration: "Release"
+  BuildPlatform: "Any CPU"
+
+steps:
+  - task: UseDotNet@2
+    displayName: 'Use .NET 5'
+    inputs:
+      packageType: 'sdk'
+      version: '5.x'
+
+  - task: DotNetCoreCLI@2
+    displayName: "Restore packages"
+    inputs:
+      command: restore
+      projects: "**/*.sln"
+
+  - task: MSBuild@1
+    displayName: "Build solution"
+    inputs:
+      solution: "**/*.sln"
+      platform: "$(BuildPlatform)"
+      configuration: "$(BuildConfiguration)"
+
+  - task: DotNetCoreCLI@2
+    displayName: Test
+    inputs:
+      command: test
+      projects: '**/*.csproj'
+      arguments: '--configuration $(BuildConfiguration) --collect "Code Coverage" -f "net5.0" -s "src/test.runsettings"'
