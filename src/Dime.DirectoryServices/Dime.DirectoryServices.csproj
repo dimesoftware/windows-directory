@@ -8,7 +8,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <AssemblyTitle>Dime.DirectoryServices</AssemblyTitle>
-    <Company>Dimenics</Company>
+    <Company>Dime Software</Company>
     <Product>Dime.DirectoryServices</Product>
     <NeutralLanguage>en</NeutralLanguage>
     <Description>Active Directory Utilities</Description>
@@ -20,7 +20,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/dimenics/windows-directory</RepositoryUrl>
     <PackageProjectUrl>https://github.com/dimenics/windows-directory</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/dimenics/dimenics/blob/master/assets/dimenicslogo.png?raw=true</PackageIconUrl>
+    <PackageIconUrl>https://cdn.dime-software.com/dime-software/logo-shape.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1">
